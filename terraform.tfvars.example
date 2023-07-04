@@ -1,0 +1,25 @@
+name                                       = "Key Vault Name"
+location                                   = "Location"
+resource_group_name                        = "Resource Group Name"
+enable_private_endpoint                    = true / false
+enable_rbac_authorization                  = true / false
+iam                                        = {
+    readers = {
+        "principal_id" = "object GUID"
+        "role_definition_name" = "Builtin Role Name"
+    }
+}
+network_acls                               = {
+    bypass = "None / AzureServices"
+    default_action = "Allow / Deny"
+    ip_rules = []
+    virtual_network_subnet_ids = []
+}
+  public_network_access_enabled              = true / false
+  sku_name                                   = "Standard"
+  soft_delete_retention_days                 = 7
+  tags                                       = {
+    key = "value"
+  }
+  tenant_id                                  = "Tenant GUID"
+  virtual_network_subnet_private_endpoint_id = "subnet resource id"
