@@ -13,10 +13,10 @@ resource "azurerm_key_vault" "key_vault" {
   enable_rbac_authorization = var.enable_rbac_authorization
 
   network_acls {
-      bypass                     = var.network_acls.bypass
-      default_action             = var.network_acls.default_action
-      ip_rules                   = var.network_acls.ip_rules
-      virtual_network_subnet_ids = var.network_acls.virtual_network_subnet_ids
+    bypass                     = var.network_acls.bypass
+    default_action             = var.network_acls.default_action
+    ip_rules                   = var.network_acls.ip_rules
+    virtual_network_subnet_ids = var.network_acls.virtual_network_subnet_ids
   }
 
   purge_protection_enabled      = var.purge_protection_enabled
@@ -45,9 +45,11 @@ resource "azurerm_private_endpoint" "key_vault" {
   }
 
   private_dns_zone_group {
-    name                 = "privatelink.azurewebsites.net"
+    name                 = "privatelink.vaultcore.azure.net"
     private_dns_zone_ids = var.private_dns_zone_ids
   }
+
+  tags = var.tags
 
 }
 
