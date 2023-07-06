@@ -73,7 +73,7 @@ variable "network_acls" {
 
 variable "private_dns_zone_ids" {
   description = "A list of Private DNS zone to integrate with Private Endpoint"
-  default      = []
+  default     = []
   type        = list(string)
 }
 
@@ -100,6 +100,6 @@ variable "tags" {
 
 variable "virtual_network_subnet_private_endpoint_id" {
   description = "The subnet associated with the Private Endpoint"
-  default = ""
-  type = string
+  default     = ""
+  type        = string
 }
